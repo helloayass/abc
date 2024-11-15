@@ -392,21 +392,6 @@ firewall_allow_ports() {
 
 # ---------------- System checks --------------- #
 
-# panel x86_64 check
-check_os_x86_64() {
-  if [ "${ARCH}" != "amd64" ]; then
-    warning "Detected CPU architecture $CPU_ARCHITECTURE"
-    warning "Using any other architecture than 64 bit (x86_64) will cause problems."
-
-    echo -e -n "* Are you sure you want to proceed? (y/N):"
-    read -r choice
-
-    if [[ ! "$choice" =~ [Yy] ]]; then
-      error "Installation aborted!"
-      exit 1
-    fi
-  fi
-}
 
 # wings virtualization check
 check_virt() {
