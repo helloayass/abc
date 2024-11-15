@@ -15,12 +15,6 @@ if ! [ -x "$(command -v curl)" ]; then
   exit 1
 fi
 
-# Always remove lib.sh, before downloading it
-[ -f /tmp/lib.sh ] && rm -rf /tmp/lib.sh
-curl -sSL -o /tmp/lib.sh https://raw.githubusercontent.com/LeXcZxMoDz9/kontol/refs/heads/main/lib/lib.sh
-# shellcheck source=lib/lib.sh
-source /tmp/lib.sh
-
 execute() {
   echo -e "\n\n* pterodactyl-installer $(date) \n\n" >>$LOG_PATH
 
