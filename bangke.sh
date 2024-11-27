@@ -61,7 +61,7 @@ loading_animation() {
         printf "\r"
         i=$((i + 1))
     done
-    sleep 2
+    sleep 0
     printf "\r\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
 }
 
@@ -70,7 +70,7 @@ animate_text() {
     local text=$1
     for ((i=0; i<${#text}; i++)); do
         printf "%s" "${text:$i:1}"
-        sleep 0.05
+        sleep 0
     done
     echo ""
 }
@@ -92,14 +92,14 @@ loading_animation() {
         printf "\r"
         i=$((i + 1))
     done
-    sleep 4
+    sleep 0
     printf "\r\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
 }
 
 # Animasi loading dan menghapus
 loading_animation
 echo -ne "\033[K"  # Menghapus teks loading dari baris
-sleep 0.5
+sleep 0
 
 echo "𝗧𝗛𝗘𝗠𝗘 ( 𝗙𝗜𝗟𝗘𝗦 )"
 echo "1. INSTALL THEME ELYSIUM PTERODACTYL"
@@ -246,8 +246,6 @@ bash installer.bash
 rm /var/www/autosuspens.zip
 cd /var/www && rm -r "$TEMP_DIR"
 
-fi
-
 echo "( 𝗙𝗜𝗟𝗘𝗦 ) THEME ELYSIUM BERHASIL TERINSTAL"
 echo "( 𝗙𝗜𝗟𝗘𝗦 ) ADDON AUTO SUSPEND BERHASIL DIINSTALL."
     ;;
@@ -341,8 +339,6 @@ bash installer.bash
 rm /var/www/autosuspens.zip
 cd /var/www && rm -r "$TEMP_DIR"
 
-fi
-
 echo "( 𝗙𝗜𝗟𝗘𝗦 ) THEME STELLAR BERHASIL TERINSTAL"
 echo "( 𝗙𝗜𝗟𝗘𝗦 ) ADDON AUTO SUSPEND BERHASIL DIINSTALL."
 
@@ -392,19 +388,6 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
         php artisan view:clear
         animate_text "Tema Elysium berhasil diinstal."
 
-        # Ganti dengan token dan URL file
-        FILE_URL="https://raw.githubusercontent.com/username/repo/main/path/to/file"
-        DESTINATION="/var/www/pterodactyl/filename"
-
-        # Mengunduh file dengan token
-        curl -H "Authorization: token ${GITHUB_TOKEN}" -L -o "${DESTINATION}" "${FILE_URL}"
-
-        # Informasi hasil
-        if [ $? -eq 0 ]; then
-            animate_text "File berhasil diunduh ke ${DESTINATION}"
-        else
-            animate_text "Gagal mengunduh file"
-        fi
         ;;
     4)
         # Masukkan token GitHub langsung di sini
@@ -429,19 +412,6 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
 
         animate_text "AUTO SUSPEND BERHASIL DIINSTALL"
 
-        # Ganti dengan token dan URL file
-        FILE_URL="https://raw.githubusercontent.com/username/repo/main/path/to/file"
-        DESTINATION="/var/www/pterodactyl/filename"
-
-        # Mengunduh file dengan token
-        curl -H "Authorization: token ${GITHUB_TOKEN}" -L -o "${DESTINATION}" "${FILE_URL}"
-
-        # Informasi hasil
-        if [ $? -eq 0 ]; then
-            animate_text "File berhasil diunduh ke ${DESTINATION}"
-        else
-            animate_text "Gagal mengunduh file"
-        fi
         ;;
 
     2)
@@ -754,7 +724,6 @@ bash blueprint.sh
         ;;
     12)
         DISABLE_ANIMATIONS=1
-        save_config
         echo -e "${YELLOW}Semua animasi telah dimatikan.${RESET}"
         ;;
     13)
