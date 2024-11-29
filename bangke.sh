@@ -1,7 +1,5 @@
 #!/bin/bash
 
-GITHUB_TOKEN="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"
-
 # Perintah untuk backup pterodactyl
 if [[ ! -d "/var/www/pterodactyl" ]]; then
     read -p "Apakah anda telah menginstal Panel pterodactyl? (y/n): " answer
@@ -210,9 +208,8 @@ sudo apt install -y nodejs npm
 echo -e "${BLUE} JIKA INSTALL NPM ERROR TETAP AKAN WORK, LANJUTKAN SAJA"
 npm i -g yarn
 
-GITHUB_TOKEN="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"
-REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-TEMP_DIR="RainPrem"
+REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+TEMP_DIR="kontol"
 
 cd /var/www && git clone "$REPO_URL"
 
@@ -302,9 +299,8 @@ fi
 sudo apt update
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - 
 
-GITHUB_TOKEN="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"
-REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-TEMP_DIR="RainPrem"
+REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+TEMP_DIR="kontol"
 
 cd /var/www && git clone "$REPO_URL"
 
@@ -352,8 +348,8 @@ echo "( 𝗙𝗜𝗟𝗘𝗦 ) ADDON AUTO SUSPEND BERHASIL DIINSTALL."
         GITHUB_TOKEN="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"
 
         # Clone repositori menggunakan token
-        REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-        TEMP_DIR="RainPrem"
+        REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+        TEMP_DIR="kontol"
 
         # Mengkloning repositori
         git clone "$REPO_URL"
@@ -362,7 +358,7 @@ echo "( 𝗙𝗜𝗟𝗘𝗦 ) ADDON AUTO SUSPEND BERHASIL DIINSTALL."
 
         # Mengekstrak file ZIP dengan opsi untuk menggantikan file tanpa konfirmasi
         unzip -o /var/www/ElysiumTheme.zip -d /var/www/
-        rm -r RainPrem
+        rm -r kontol
         rm /var/www/ElysiumTheme.zip
         
         # Menjalankan perintah
@@ -394,8 +390,8 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
         GITHUB_TOKEN="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"
 
         # Clone repositori menggunakan token
-        REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-        TEMP_DIR="RainPrem"
+        REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+        TEMP_DIR="kontol"
 
         # Mengkloning repositori
         git clone "$REPO_URL"
@@ -404,7 +400,7 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
 
         # Mengekstrak file ZIP dengan opsi untuk menggantikan file tanpa konfirmasi
         unzip -o /var/www/autosuspens.zip -d /var/www/
-        rm -r RainPrem
+        rm -r kontol
         rm /var/www/autosuspens.zip
         
         cd /var/www/pterodactyl
@@ -423,12 +419,9 @@ if [ ! -f "$BLUEPRINT_FILE" ]; then
     exit 1
 fi
 
-# Masukkan token GitHub langsung di sini
-    GITHUB_TOKEN="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"
-
     # Clone repositori menggunakan token
-    REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-    TEMP_DIR="RainPrem"
+    REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+    TEMP_DIR="kontol"
 
     # Mengkloning repositori
     git clone "$REPO_URL"
@@ -436,7 +429,7 @@ fi
     sudo mv "$TEMP_DIR/nebulaptero.zip" /var/www/
     unzip -o /var/www/nebulaptero.zip -d /var/www/
     cd /var/www/pterodactyl && blueprint -install nebula
-  cd /var/www/ && rm -r RainPrem
+  cd /var/www/ && rm -r kontol
   cd /var/www/ && rm -r nebulaptero.zip
 cd /var/www/pterodactyl && rm -r nebula.blueprint
 echo "NEBULA THEME BERHASIL DI INSTALL"
@@ -448,12 +441,10 @@ if [ ! -f "$BLUEPRINT_FILE" ]; then
     echo "𝗗𝗘𝗣𝗘𝗡𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗕𝗘𝗟𝗨𝗠 𝗗𝗜𝗜𝗡𝗦𝗧𝗔𝗟 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗧𝗘𝗥𝗟𝗘𝗕𝗜𝗛 𝗗𝗔𝗛𝗨𝗟𝗨 𝗗𝗘𝗡𝗚𝗔𝗡 𝗠𝗘𝗠𝗜𝗟𝗜𝗛 𝗢𝗣𝗦𝗜 𝗡𝗢 𝟭𝟭"
     exit 1
 fi
-# Masukkan token GitHub langsung di sini
-    GITHUB_TOKEN="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"
 
     # Clone repositori menggunakan token
-    REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-    TEMP_DIR="RainPrem"
+    REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+    TEMP_DIR="kontol"
 
     # Mengkloning repositori
     git clone "$REPO_URL"
@@ -462,7 +453,7 @@ fi
     sudo mv "$TEMP_DIR/Slate-v1.0.zip" /var/www/
     unzip -o /var/www/Slate-v1.0.zip -d /var/www/
     cd /var/www/pterodactyl && blueprint -install slate
-  cd /var/www/ && rm -r RainPrem
+  cd /var/www/ && rm -r kontol
   cd /var/www/ && rm -r Slate-v1.0.zip
     ;;
     6)
@@ -473,7 +464,7 @@ fi
 ;;
      7)
 # Default URL gambar
-DEFAULT_URL="https://telegra.ph/file/28c25edd617126d1056d9.jpg"
+DEFAULT_URL="https://telegra.ph/file/35d23db684fd1d88556ee.jpg"
 
 # Meminta input URL gambar dari pengguna
 read -p "Masukkan URL gambar (tekan Enter untuk menggunakan URL default): " USER_URL
@@ -507,7 +498,7 @@ fi
   echo '<head>'
   echo '    <meta charset="UTF-8">'
   echo '    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
-  echo '    <title>Pterodactyl Background</title>'
+  echo '    <title>LeXcZ</title>'
   echo '    <style>'
   echo "        body {"
   echo "            background-image: url('$URL');"
@@ -634,12 +625,9 @@ else
 fi
  ;;
     5)
-     # Masukkan token GitHub langsung di sini
-        GITHUB_TOKEN="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"
-
         # Clone repositori menggunakan token
-        REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-        TEMP_DIR="RainPrem"
+        REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+        TEMP_DIR="kontol"
 
         # Mengkloning repositori
         git clone "$REPO_URL"
@@ -648,7 +636,7 @@ fi
 
         # Mengekstrak file ZIP dengan opsi untuk menggantikan file tanpa konfirmasi
         unzip -o /var/www/googleanalitic.zip -d /var/www/
-        rm -r RainPrem
+        rm -r kontol
         rm /var/www/googleanalitic.zip
         
         # Menjalankan perintah
@@ -682,13 +670,9 @@ if [ ! -f "$BLUEPRINT_FILE" ]; then
     echo "𝗗𝗘𝗣𝗘𝗡𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗕𝗘𝗟𝗨𝗠 𝗗𝗜𝗜𝗡𝗦𝗧𝗔𝗟 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗧𝗘𝗥𝗟𝗘𝗕𝗜𝗛 𝗗𝗔𝗛𝗨𝗟𝗨 𝗗𝗘𝗡𝗚𝗔𝗡 𝗠𝗘𝗠𝗜𝗟𝗜𝗛 𝗢𝗣𝗦𝗜 𝗡𝗢 𝟭𝟭"
     exit 1
 fi
-
-# Masukkan token GitHub langsung di sini
-GITHUB_TOKEN="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"
-
 # Clone repositori menggunakan token
-REPO_URL="https://${GITHUB_TOKEN}@github.com/rainmc0123/RainPrem.git"
-TEMP_DIR="RainPrem"
+REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
+TEMP_DIR="kontol"
 
 # Mengkloning repositori
 git clone "$REPO_URL"
@@ -696,7 +680,7 @@ git clone "$REPO_URL"
 sudo mv "$TEMP_DIR/cookies.zip" /var/www/pterodactyl
 unzip -o /var/www/pterodactyl/cookies.zip -d /var/www/pterodactyl
 cd /var/www/pterodactyl && blueprint -install cookies
-cd /var/www/ && rm -r RainPrem
+cd /var/www/ && rm -r kontol
 cd /var/www/pterodactyl && rm -r cookies.zip
 cd /var/www/pterodactyl && rm -r cookies.blueprint
 echo "ADDON COOKIES BERHASIL DI INSTALL"
