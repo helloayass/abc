@@ -33,12 +33,6 @@ RESET='\033[0m'  # Reset warna teks ke default
 
 # Menampilkan informasi
 clear
-echo -e "\033[31m"
-echo "____      _    ___ _   _ __  __  ____"
-echo "|  _ \    / \  |_ _| \ | |  \/  |/ ___|"
-echo "| |_) |  / _ \  | ||  \| | |\/| | |"
-echo "|  _ <  / ___ \ | || |\  | |  | | |___"
-echo "|_| \_\/_/   \_\___|_| \_|_|  |_|\____|"
 echo -e "\033[0m"
 echo -e "${RED}𝗢𝗪𝗡𝗘𝗥${RESET}${BLUE}𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥${RESET}"
 echo -e "\033[32mWHATSAPP  : 79105052657\033[0m"
@@ -47,7 +41,7 @@ echo ""
 # Tambahkan bagian lain dari skrip Anda di sini jika diperlukan
 # Fungsi untuk menampilkan animasi loading
 loading_animation() {
-    local delay=0.1
+    local delay=0
     local spinstr='|/-\'
     local loading_text="LOADING..."
     local i=0
@@ -78,7 +72,7 @@ echo -e "${BLUE}(𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗜𝗖) 𝖫ICENSE ANDA BENAR, TE
 animate_text "OPSI ADA DIBAWAH INI"
 # Fungsi untuk menampilkan animasi loading
 loading_animation() {
-    local delay=0.1
+    local delay=0
     local spinstr='|/-\'
     local loading_text="LOADING"
     local i=0
@@ -99,36 +93,7 @@ loading_animation
 echo -ne "\033[K"  # Menghapus teks loading dari baris
 sleep 0
 
-echo "𝗧𝗛𝗘𝗠𝗘 ( 𝗙𝗜𝗟𝗘𝗦 )"
-echo "1. INSTALL THEME ELYSIUM PTERODACTYL"
-echo "      ᴘʀᴇᴠɪᴇᴡ : https://www.sourcexchange.net/products/elysium-theme"
-echo ""
-echo "𝗧𝗛𝗘𝗠𝗘 ( 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 ) "
-echo "2. INSTALL NEBULA THEME PTERODACTYL"
-echo "   ᴘʀᴇᴠɪᴇᴡ : https://builtbybit.com/resources/nebula.32442/"
-echo "3. ADMIN PANEL THEME PTERODACTYL"
-echo "   ᴘʀᴇᴠɪᴇᴡ : https://builtbybit.com/resources/slate.36101/"
-echo ""
-echo "𝗔𝗗𝗗𝗢𝗡 ( 𝗙𝗜𝗟𝗘𝗦 )"
-echo "4. INSTALL ADDON AUTO SUSPEND PTERODACTYL"
-echo "      ᴘʀᴇᴠɪᴇᴡ : https://builtbybit.com/resources/pterodactyl-v1-addon-auto-suspension.20012/"
-echo "5. INSTALL GOOGLE ANALITIC PTERODACTYL"
-echo "   ᴘʀᴇᴠɪᴇᴡ : https://builtbybit.com/resources/google-analytics-addon-for-pterodactyl.38696/"
-echo ""
-echo "𝗧𝗛𝗘𝗠𝗘 ( 𝗥𝗘𝗠𝗔𝗞𝗘 ) "
-echo "6. STELLAR THEME PREMIUM PTERODACTYL REMAKE (COMING SOON) SILAHKAN MEMILIH OPSI 1B"
-echo ""
-echo "𝗣𝗧𝗘𝗥𝗢𝗗𝗔𝗖𝗧𝗬𝗟 ( 𝗘𝗗𝗜𝗧 )"
-echo "7. UBAH BACKROUND PTERODACTYL"
-echo "8. HAPUS BACKROUND PTERODACTYL (RESET BACKROUND JADI YANG AWAL)"
 echo "9. HAPUS THEME/ADDON"
-echo ""
-echo "𝗔𝗗𝗗𝗢𝗡 ( 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 )"
-echo "10. COOKIES PTERODACTYL"
-echo "   ᴘʀᴇᴠɪᴇᴡ : https://builtbybit.com/resources/cookies.38647/"
-echo ""
-echo "𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗗𝗘𝗣𝗘𝗡𝗗 ( 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 )"
-echo "11. INSTALL DEPEND ADDON / THEME PLUGINS"
 echo ""
 echo "𝗖𝗢𝗠𝗕𝗜𝗡𝗘𝗗 𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗘𝗥 ( 𝗙𝗜𝗟𝗘𝗦 )"
 echo "1A. INSTALL THEME ELYSIUM,AUTOSUSPEND"
