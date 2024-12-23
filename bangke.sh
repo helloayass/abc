@@ -104,9 +104,10 @@ echo "1B. INSTALL THEME STELLAR,AUTOSUSPEND"
 echo "1C. INSTALL THEME NIGHT CORE"
 echo ""
 echo "𝗖𝗢𝗠𝗕𝗜𝗡𝗘𝗗 𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗘𝗥 ( 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 - 𝗙𝗜𝗟𝗘𝗦 )"
-echo "2A. INSTALL THEME NEBULA, ADDON AUTOSUSPEND ( COMING SOON )"
+echo "2A. INSTALL THEME NEBULA ( UJI COBA )"
 echo ""
 echo "𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗘𝗥"
+echo "11. INSTALL PLUGIN NEBULA ( WAJIB KETIKA MAU INSTALL THEME NEBULA )"
 echo "12. MATIKAN SEMUA ANIMASI INSTALLER (TIDAK BERLAKU DI WEB ANDA HANYA MEMATIKAN TEXT ANIMATION INSTALLER)"
 echo "13. KELUAR DARI INSTALLER"
 echo ""
@@ -441,13 +442,9 @@ fi
     TEMP_DIR="kontol"
 
     # Mengkloning repositori
-    git clone "$REPO_URL"
-
-    sudo mv "$TEMP_DIR/nebulaptero.zip" /var/www/
-    unzip -o /var/www/nebulaptero.zip -d /var/www/
-    cd /var/www/pterodactyl && blueprint -install nebula
-  cd /var/www/ && rm -r kontol
-  cd /var/www/ && rm -r nebulaptero.zip
+    cd /var/www/pterodactyl
+    wget https://drive.google.com/file/d/1IYx18S_75zUT1zkUkhhZOLs57FXu1GYo/view?usp=sharing -O nebula.blueprint
+    blueprint -install nebula
 cd /var/www/pterodactyl && rm -r nebula.blueprint
 echo "NEBULA THEME BERHASIL DI INSTALL"
     ;;
@@ -679,7 +676,7 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
         php artisan view:clear
         echo -e "${BLUE}ADDON GOOGLE ANALITYC BERHASIL DIINSTAL${RESET}"
         ;;
-        10)
+        11)
 cd /var/www/
 # Mengecek keberadaan file blueprint.sh
 BLUEPRINT_FILE="/var/www/pterodactyl/blueprint.sh"
