@@ -676,7 +676,7 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
         php artisan view:clear
         echo -e "${BLUE}ADDON GOOGLE ANALITYC BERHASIL DIINSTAL${RESET}"
         ;;
-        11)
+        111)
 cd /var/www/
 # Mengecek keberadaan file blueprint.sh
 BLUEPRINT_FILE="/var/www/pterodactyl/blueprint.sh"
