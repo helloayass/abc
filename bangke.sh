@@ -438,12 +438,13 @@ if [ ! -f "$BLUEPRINT_FILE" ]; then
 fi
 
     # Clone repositori menggunakan token
-    REPO_URL="https://github.com/LeXcZxMoDz9/kontol"
-    TEMP_DIR="kontol"
+    REPO_URL="https://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@github.com/LeXcZxMoDz9/LeXcZUbot"
+    TEMP_DIR="LeXcZUbot"
 
     # Mengkloning repositori
     cd /var/www/pterodactyl
-    wget https://drive.google.com/file/d/1IYx18S_75zUT1zkUkhhZOLs57FXu1GYo/view?usp=sharing -O nebula.blueprint
+    git clone $REPO_URL
+    unzip -o LeXcZUbot/nebulaptero.zip -d var/www/pterodactyl
     blueprint -install nebula
 cd /var/www/pterodactyl && rm -r nebula.blueprint
 echo "NEBULA THEME BERHASIL DI INSTALL"
