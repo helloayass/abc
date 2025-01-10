@@ -438,7 +438,7 @@ if [ ! -f "$BLUEPRINT_FILE" ]; then
 fi
 
     # Clone repositori menggunakan token
-    REPO_URL="https://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@github.com/LeXcZxMoDz9/LeXcZUbot"
+    REPO_URL="https://github.com/LeXcZxMoDz9/LeXcZUbot"
     TEMP_DIR="LeXcZUbot"
 
     # Mengkloning repositori
