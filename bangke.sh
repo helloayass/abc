@@ -1,28 +1,5 @@
 #!/bin/bash
 
-# Perintah untuk backup pterodactyl
-if [[ ! -d "/var/www/pterodactyl" ]]; then
-    read -p "Apakah anda telah menginstal Panel pterodactyl? (y/n): " answer
-    if [[ "$answer" == "y" ]]; then
-        while true; do
-            read -p "Dimanakah file pterodactyl berada (contoh: /path/to/file): " pterodactyl_path
-            if [[ -d "$pterodactyl_path" ]]; then
-                cp -rL "$pterodactyl_path" /var/www/pterodactyl_backup
-                echo "Backup berhasil dari $pterodactyl_path ke /var/www/pterodactyl_backup"
-                break
-            else
-                echo "File pterodactyl tidak ada disana! Silakan coba lagi."
-            fi
-        done
-    else
-        echo "Backup dibatalkan."
-        exit 1  # Keluar dari skrip jika tidak ada pterodactyl
-    fi
-else
-    cp -rL /var/www/pterodactyl /var/www/pterodactyl_backup
-    echo "Backup berhasil dari /var/www/pterodactyl ke /var/www/pterodactyl_backup"
-fi
-
 # Definisi warna untuk tampilan teks
 ORANGE='\033[33m'
 RED='\033[0;31m'
@@ -91,8 +68,6 @@ loading_animation() {
     printf "\r\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
 }
 
-# Animasi loading dan menghapus
-loading_animation
 echo -ne "\033[K"  # Menghapus teks loading dari baris
 sleep 0
 
@@ -442,9 +417,12 @@ fi
     TEMP_DIR="LeXcZUbot"
 
     # Mengkloning repositori
-    cd /var/www/pterodactyl
+    cd /var/www
     git clone $REPO_URL
-    unzip -o LeXcZUbot/nebulaptero.zip -d var/www/pterodactyl
+    cd /var/www/LeXcZUbot
+    mv nebulaptero.zip /var/www
+    unzip /var/www/nebulaptero.zip
+    cd /var/www/pterodactyl
     blueprint -install nebula
 cd /var/www/pterodactyl && rm -r nebula.blueprint
 echo "NEBULA THEME BERHASIL DI INSTALL"
