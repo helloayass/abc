@@ -381,16 +381,75 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
         ;;
 
     2A)
-    
-    # Clone repositori menggunakan token
-    REPO_URL="https://github.com/LeXcZxMoDz9/LeXcZUbot"
-    TEMP_DIR="LeXcZUbot"
+   REPO_URL="https://github.com/LeXcZxMoDz9/LeXcZUbot"
+TEMP_DIR="LeXcZUbot"
 
-    # Mengkloning repositori
-    sudo apt-get install -y ca-certificates curl gnupg && sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list && apt-get update && apt update -y && npm i -g yarn && cd /var/www/pterodactyl && yarn && apt install -y zip unzip git curl wget && wget "$(curl -s https://api.github.com/repos/BlueprintFramework/framework/releases/latest | grep 'browser_download_url' | cut -d '"' -f 4)" -O release.zip && unzip release.zip && FOLDER="/var/www/pterodactyl"; WEBUSER="www-data"; USERSHELL="/bin/bash"; PERMISSIONS="www-data:www-data";
-sed -i -E -e "s|WEBUSER=\"www-data\" #;|WEBUSER=\"$WEBUSER\" #;|g" -e "s|USERSHELL=\"/bin/bash\" #;|USERSHELL=\"$USERSHELL\" #;|g" -e "s|OWNERSHIP=\"www-data:www-data\" #;|OWNERSHIP=\"$PERMISSIONS\" #;|g" $FOLDER/blueprint.sh && chmod +x blueprint.sh && bash blueprint.sh && cd /root && cd /var/www && git clone $REPO_URL && cd LeXcZUbot && mv * /var/www && cd /var/www && unzip nebulaptero.zip && cd /var/www/pterodactyl && blueprint -install nebula
-echo "NEBULA THEME BERHASIL DI INSTALL"
+BLUEPRINT_PATH="/var/www/pterodactyl/blueprint.sh"
+
+if [ -f "$BLUEPRINT_PATH" ]; then
+    echo "Blueprint sudah terpasang. Melanjutkan instalasi tema."
+    cd /root
+    cd /var/www
+
+    git clone $REPO_URL
+
+    cd "$TEMP_DIR"
+    mv * /var/www
+
+    cd
+    cd /var/www
+    unzip nebulaptero.zip
+
+    cd /var/www/pterodactyl
+    blueprint -install nebula
+
+    echo "NEBULA THEME BERHASIL DI INSTALL"
+else
+    echo "Blueprint belum terpasang. Memulai proses instalasi Blueprint dan dependensi."
+
+    sudo apt-get install -y ca-certificates curl gnupg
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+    sudo apt-get update && sudo apt update -y
+    sudo npm i -g yarn
+
+    cd /var/www/pterodactyl
+    yarn
+
+    sudo apt install -y zip unzip git curl wget
+
+    wget "$(curl -s https://api.github.com/repos/BlueprintFramework/framework/releases/latest | grep 'browser_download_url' | cut -d '"' -f 4)" -O release.zip
+    unzip release.zip
+
+    FOLDER="/var/www/pterodactyl"
+    WEBUSER="www-data"
+    USERSHELL="/bin/bash"
+    PERMISSIONS="www-data:www-data"
+
+    sed -i -E \
+        -e "s|WEBUSER=\"www-data\" #;|WEBUSER=\"$WEBUSER\" #;|g" \
+        -e "s|USERSHELL=\"/bin/bash\" #;|USERSHELL=\"$USERSHELL\" #;|g" \
+        -e "s|OWNERSHIP=\"www-data:www-data\" #;|OWNERSHIP=\"$PERMISSIONS\" #;|g" \
+        "$FOLDER/blueprint.sh"
+
+    chmod +x blueprint.sh
+    bash blueprint.sh
+
+    cd /root
+    cd /var/www
+    git clone $REPO_URL
+    cd "$TEMP_DIR"
+    mv * /var/www
+    cd /root
+    cd /var/www
+    unzip nebulaptero.zip
+    cd /var/www/pterodactyl
+    blueprint -install nebula
+
+    echo "NEBULA THEME BERHASIL DI INSTALL"
+fi
+
     ;;
      3)
 cd /var/www
