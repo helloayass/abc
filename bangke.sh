@@ -385,6 +385,12 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
 TEMP_DIR="LeXcZUbot"
 
 BLUEPRINT_PATH="/var/www/pterodactyl/blueprint.sh"
+TEMP_DIR_PATH="/var/www/$TEMP_DIR"
+
+if [ -d "$TEMP_DIR_PATH" ]; then
+    echo "Folder $TEMP_DIR ditemukan. Menghapus folder..."
+    rm -rf "$TEMP_DIR_PATH"
+fi
 
 if [ -f "$BLUEPRINT_PATH" ]; then
     echo "Blueprint sudah terpasang. Melanjutkan instalasi tema."
@@ -394,8 +400,8 @@ if [ -f "$BLUEPRINT_PATH" ]; then
     git clone $REPO_URL
 
     cd "$TEMP_DIR"
-    mv * /var/www
-
+    mv * /var/www  
+    
     cd
     cd /var/www
     unzip nebulaptero.zip
@@ -411,7 +417,7 @@ else
     sudo mkdir -p /etc/apt/keyrings
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
     echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-    sudo apt-get update && sudo apt update -y
+    sudo apt update && sudo apt upgrade -y
     sudo npm i -g yarn
 
     cd /var/www/pterodactyl
@@ -441,7 +447,7 @@ else
     git clone $REPO_URL
     cd "$TEMP_DIR"
     mv * /var/www
-    cd /root
+    cd
     cd /var/www
     unzip nebulaptero.zip
     cd /var/www/pterodactyl
@@ -449,7 +455,6 @@ else
 
     echo "NEBULA THEME BERHASIL DI INSTALL"
 fi
-
     ;;
      3)
 cd /var/www
