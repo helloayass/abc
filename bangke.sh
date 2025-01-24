@@ -65,15 +65,8 @@ echo ""
 echo "𝗖𝗢𝗠𝗕𝗜𝗡𝗘𝗗 𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗘𝗥 ( 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 - 𝗙𝗜𝗟𝗘𝗦 )"
 echo "2A. INSTALL THEME NEBULA ( UJI COBA )"
 echo ""
-echo "𝗜𝗡𝗦𝗧𝗔𝗟𝗟𝗘𝗥"
-echo "11. INSTALL PLUGIN NEBULA ( WAJIB KETIKA MAU INSTALL THEME NEBULA )"
 echo "12. MATIKAN SEMUA ANIMASI INSTALLER (TIDAK BERLAKU DI WEB ANDA HANYA MEMATIKAN TEXT ANIMATION INSTALLER)"
 echo "13. KELUAR DARI INSTALLER"
-echo ""
-echo "𝗗𝗘𝗟𝗘𝗧𝗘 𝗧𝗛𝗘𝗠𝗘 / 𝗔𝗗𝗗𝗢𝗡 ( 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 )"
-echo "14. DELETE THEME NEBULA"
-echo "15. DELETE THEME SLATE"
-echo "16. DELETE THEME COOKIES"
 echo ""
 echo "𝗥𝗢𝗟𝗕𝗔𝗖𝗞 𝗙𝗜𝗟𝗘𝗦"
 echo "R. ROLBACK FILES PTERODACTYL ( TIDAK MEMENGARUHI DATA - DATA SERVER )"
@@ -389,19 +382,14 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
 
     2A)
     
-cd /var/www
-BLUEPRINT_FILE="/var/www/pterodactyl/blueprint.sh"
-if [ ! -f "$BLUEPRINT_FILE" ]; then
-    echo "𝗗𝗘𝗣𝗘𝗡𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗕𝗘𝗟𝗨𝗠 𝗗𝗜𝗜𝗡𝗦𝗧𝗔𝗟 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗧𝗘𝗥𝗟𝗘𝗕𝗜𝗛 𝗗𝗔𝗛𝗨𝗟𝗨 𝗗𝗘𝗡𝗚𝗔𝗡 𝗠𝗘𝗠𝗜𝗟𝗜𝗛 𝗢𝗣𝗦𝗜 𝗡𝗢 𝟭𝟭"
-    exit 1
-fi
-
     # Clone repositori menggunakan token
     REPO_URL="https://github.com/LeXcZxMoDz9/LeXcZUbot"
     TEMP_DIR="LeXcZUbot"
 
     # Mengkloning repositori
-    cd /var/www && git clone $REPO_URL && cd /var/www/LeXcZUbot && mv nebulaptero.zip /var/www && unzip /var/www/nebulaptero.zip && cd /var/www/pterodactyl && blueprint -install nebula
+    sudo apt-get install -y ca-certificates curl gnupg && sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list && apt-get update && apt-get install -y nodejs && apt install npm && npm i -g yarn && cd /var/www/pterodactyl && yarn && apt install -y zip unzip git curl wget && wget "$(curl -s https://api.github.com/repos/BlueprintFramework/framework/releases/latest | grep 'browser_download_url' | cut -d '"' -f 4)" -O release.zip && unzip release.zip && FOLDER="/var/www/pterodactyl"; WEBUSER="www-data"; USERSHELL="/bin/bash"; PERMISSIONS="www-data:www-data";
+sed -i -E -e "s|WEBUSER=\"www-data\" #;|WEBUSER=\"$WEBUSER\" #;|g" -e "s|USERSHELL=\"/bin/bash\" #;|USERSHELL=\"$USERSHELL\" #;|g" -e "s|OWNERSHIP=\"www-data:www-data\" #;|OWNERSHIP=\"$PERMISSIONS\" #;|g" $FOLDER/blueprint.sh && chmod +x blueprint.sh && bash blueprint.sh && cd /root && cd /var/www && git clone $REPO_URL && cd LeXcZUbot && mv * /var/www && unzip /var/www/nebulaptero.zip && cd /var/www/pterodactyl && blueprint -install nebula
 echo "NEBULA THEME BERHASIL DI INSTALL"
     ;;
      3)
