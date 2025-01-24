@@ -51,22 +51,6 @@ animate_text() {
 echo -e "${BLUE}(𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗜𝗖) 𝖫ICENSE ANDA BENAR, TERIMAKASIH TELAH MEMBELI LICENSE INI YA${RESET}"
 animate_text "OPSI ADA DIBAWAH INI"
 # Fungsi untuk menampilkan animasi loading
-loading_animation() {
-    local delay=0
-    local spinstr='|/-\'
-    local loading_text="LOADING"
-    local i=0
-    while [ $i -lt ${#loading_text} ]; do
-        local temp=${spinstr#?}
-        printf " [%c] %s" "$spinstr" "${loading_text:0:i+1}"
-        local spinstr=$temp${spinstr%"$temp"}
-        sleep $delay
-        printf "\r"
-        i=$((i + 1))
-    done
-    sleep 0
-    printf "\r\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
-}
 
 echo -ne "\033[K"  # Menghapus teks loading dari baris
 sleep 0
@@ -332,7 +316,7 @@ echo -e "${GREEN}Installing ${YELLOW}sudo${GREEN} if not installed${RESET}"
     echo -e "${GREEN}Optimizing the Panel...${RESET}"
     sudo php artisan optimize:clear > /dev/null 2>&1
     ;;
-        2A)
+        2Ahshs)
     animate_text "( 𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗜𝗖 ) FITUR INI DALAM TAHAP PEMGEMBANGAN"
     ;;
 
@@ -403,7 +387,7 @@ echo -e "${BLUE} KETIK yes UNTUK MELANJUTKAN${RESET}"
 
         ;;
 
-    2)
+    2A)
     
 cd /var/www
 BLUEPRINT_FILE="/var/www/pterodactyl/blueprint.sh"
@@ -417,14 +401,7 @@ fi
     TEMP_DIR="LeXcZUbot"
 
     # Mengkloning repositori
-    cd /var/www
-    git clone $REPO_URL
-    cd /var/www/LeXcZUbot
-    mv nebulaptero.zip /var/www
-    unzip /var/www/nebulaptero.zip
-    cd /var/www/pterodactyl
-    blueprint -install nebula
-cd /var/www/pterodactyl && rm -r nebula.blueprint
+    cd /var/www && git clone $REPO_URL && cd /var/www/LeXcZUbot && mv nebulaptero.zip /var/www && unzip /var/www/nebulaptero.zip && cd /var/www/pterodactyl && blueprint -install nebula
 echo "NEBULA THEME BERHASIL DI INSTALL"
     ;;
      3)
