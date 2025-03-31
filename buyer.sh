@@ -366,3 +366,4 @@ echo -e "${CYAN}============================================================${RE
     *)
 
         echo -e "${RED}Pilihan tidak valid.${RESET}"
+esac
