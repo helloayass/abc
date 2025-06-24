@@ -15,8 +15,8 @@ CYAN='\033[0;36m' # Reset warna teks ke default
 clear
 echo -e "\033[0m"
 echo -e "${RED}𝗢𝗪𝗡𝗘𝗥${RESET}${BLUE}𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥${RESET}"
-echo -e "\033[32mWHATSAPP  : 79105052657\033[0m"
-echo -e "\033[31mYOUTUBE : LeXcZxMoDz\033[0m"
+echo -e "\033[32mWHATSAPP  : 6285179836603\033[0m"
+echo -e "\033[31mYOUTUBE : YASSxOFC\033[0m"
 echo ""
 # Tambahkan bagian lain dari skrip Anda di sini jika diperlukan
 # Fungsi untuk menampilkan animasi loading
